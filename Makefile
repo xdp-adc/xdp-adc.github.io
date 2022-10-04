@@ -1,9 +1,10 @@
 # Minimal makefile for Sphinx documentation
 #
 
-# You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+# You can set these variables from the command line, and also
+# from the environment for the first two.
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = _build
 
@@ -19,7 +20,16 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 release:
+	# get rid of old cache
 	rm -rf docs/*
+
+	# generate new site
 	make html
+
+	# copy the site over
 	mkdir -p docs
 	cp -r _build/html/* docs/
+
+	# replace the static folder path
+	mv docs/_static docs/static
+	find docs -type f -exec sed -i 's/_static/static/g' {} \;

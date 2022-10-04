@@ -1,7 +1,18 @@
 # doc-site
 
+## install dependencies
 
-## to release
+```bash
+sudo pacman -S python-sphinx
+```
+
+Then install the theme:
+
+```bash
+pip install sphinx-rtd-theme
+```
+
+## to build
 
 use the following command:
 
