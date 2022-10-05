@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Started with XDP-ADC &mdash; XDP-ADC  documentation</title>
+  <title>XDP-ADC: Getting Started with Docker &mdash; XDP-ADC  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal" href="linux_based.html" />
-    <link rel="prev" title="Welcome to XDP-ADC’s documentation!" href="../index.html" /> 
+    <link rel="next" title="View the defense logs with XDP-ADC" href="../view_defense/index.html" />
+    <link rel="prev" title="XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal" href="linux_based.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,9 +41,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Get Started with XDP-ADC</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docker.html">XDP-ADC: Getting Started with Docker</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Getting Started with Docker</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
@@ -64,9 +66,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Get Started with XDP-ADC</li>
+          <li><a href="index.html">Get Started with XDP-ADC</a> &raquo;</li>
+      <li>XDP-ADC: Getting Started with Docker</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/get_started/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/get_started/docker.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -74,26 +77,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="get-started-with-xdp-adc">
-<h1>Get Started with XDP-ADC<a class="headerlink" href="#get-started-with-xdp-adc" title="Permalink to this heading"></a></h1>
-<p>Getting started.</p>
+  <section id="xdp-adc-getting-started-with-docker">
+<h1>XDP-ADC: Getting Started with Docker<a class="headerlink" href="#xdp-adc-getting-started-with-docker" title="Permalink to this heading"></a></h1>
+<p>Getting started with XDP-ADC is as simple as dropping our daemon into your service or stack. Once we’re in, XDP-ADC protects your system based on the configured security rules.</p>
+<p>Below are instructions for installing the XDP-ADC daemon on a staging or production Docker container that has access to the public internet. You will need to be in our beta to use this.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#installation-steps">Installation Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#using-bash">Using bash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#using-apt">Using APT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#login">Login</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#start-daemon">Start daemon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#verify">verify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux_based.html#starting-daemon-on-system-boot">Starting daemon on system boot</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="docker.html">XDP-ADC: Getting Started with Docker</a><ul class="simple">
-</ul>
-</li>
-</ul>
 </div>
 </section>
 
@@ -101,8 +89,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to XDP-ADC’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="linux_based.html" class="btn btn-neutral float-right" title="XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="linux_based.html" class="btn btn-neutral float-left" title="XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../view_defense/index.html" class="btn btn-neutral float-right" title="View the defense logs with XDP-ADC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -8,3 +8,4 @@ Getting started.
    :caption: Contents:
 
    linux_based
+   docker
