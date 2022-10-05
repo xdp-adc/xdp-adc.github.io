@@ -19,7 +19,8 @@
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Get Started with XDP-ADC" href="get_started/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,12 +38,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to XDP-ADC’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get_started/index.html">Get Started with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view_defense/index.html">View the defense logs with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/index.html">Advanced Configuration with XDP-ADC</a></li>
 </ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -69,7 +71,23 @@
              
   <section id="welcome-to-xdp-adc-s-documentation">
 <h1>Welcome to XDP-ADC’s documentation!<a class="headerlink" href="#welcome-to-xdp-adc-s-documentation" title="Permalink to this heading"></a></h1>
+<p><strong>XDP-ADC: 10x faster WAF/WAAP that works at network layer (L2)</strong></p>
+<p>XDP (eXpress Data Path) is an eBPF-based high-performance data path used to send and receive network packets at high rates by bypassing most of the operating system networking stack.</p>
+<p>We can build an application delivery controller (ADC) in front of web applications running in kubernetes (k8s) with XDP. And because XDP has network layer performance, it’s way more than a regular WAAP solution in the market.</p>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get_started/index.html">Get Started with XDP-ADC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_started/linux_based.html">XDP-ADC: Getting Started on Linux-based virtual machines or bare-metal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="view_defense/index.html">View the defense logs with XDP-ADC</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/index.html">Advanced Configuration with XDP-ADC</a><ul class="simple">
+</ul>
+</li>
+</ul>
 </div>
 </section>
 <section id="indices-and-tables">
@@ -84,7 +102,9 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="get_started/index.html" class="btn btn-neutral float-right" title="Get Started with XDP-ADC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

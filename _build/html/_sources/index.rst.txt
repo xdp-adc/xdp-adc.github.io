@@ -6,15 +6,22 @@
 Welcome to XDP-ADC's documentation!
 ===================================
 
+**XDP-ADC: 10x faster WAF/WAAP that works at network layer (L2)**
+
+XDP (eXpress Data Path) is an eBPF-based high-performance data path used to send and receive network packets at high rates by bypassing most of the operating system networking stack.
+
+We can build an application delivery controller (ADC) in front of web applications running in kubernetes (k8s) with XDP. And because XDP has network layer performance, it's way more than a regular WAAP solution in the market.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   get_started/index.rst
+   view_defense/index.rst
+   advanced/index.rst
 
 Indices and tables
 ==================
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

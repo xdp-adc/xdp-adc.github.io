@@ -32,4 +32,6 @@ release:
 
 	# replace the static folder path
 	mv docs/_static docs/static
+	mv docs/_sources docs/sources
 	find docs -type f -exec sed -i 's/_static/static/g' {} \;
+	find docs -type f -exec sed -i 's/_sources/sources/g' {} \;

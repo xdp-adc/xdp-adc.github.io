@@ -16,12 +16,11 @@ We can build an application delivery controller (ADC) in front of web applicatio
    :maxdepth: 2
    :caption: Contents:
 
-   get_started/index.rst
-   view_defense/index.rst
-   advanced/index.rst
 
 Indices and tables
 ==================
+
+* :ref:`get_started`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

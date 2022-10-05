@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDP-ADC: Getting Started on Linux-based virtual machines or bare-metal &mdash; XDP-ADC  documentation</title>
+      <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+        <script src="../static/jquery.js"></script>
+        <script src="../static/underscore.js"></script>
+        <script src="../static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../static/doctools.js"></script>
+        <script src="../static/sphinx_highlight.js"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="View the defense logs with XDP-ADC" href="../view_defense/index.html" />
+    <link rel="prev" title="Get Started with XDP-ADC" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> XDP-ADC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Getting Started on Linux-based virtual machines or bare-metal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-steps">Installation Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-bash">Using bash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-apt">Using APT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-daemon">Start daemon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify">verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#starting-daemon-on-system-boot">Starting daemon on system boot</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Configuration with XDP-ADC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">XDP-ADC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Get Started with XDP-ADC</a> &raquo;</li>
+      <li>XDP-ADC: Getting Started on Linux-based virtual machines or bare-metal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/get_started/linux_based.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdp-adc-getting-started-on-linux-based-virtual-machines-or-bare-metal">
+<h1>XDP-ADC: Getting Started on Linux-based virtual machines or bare-metal<a class="headerlink" href="#xdp-adc-getting-started-on-linux-based-virtual-machines-or-bare-metal" title="Permalink to this heading"></a></h1>
+<p>Getting started on Linux with XDP-ADC is as easy as running a Linux daemon program in your VM or machine. Once the daemon program is up and running, XDP-ADC is already protecting the system.</p>
+<p>Below are instructions for installing the XDP-ADC daemon program in any Debian Linux environment. You’ll need to be in our beta to use this.</p>
+<section id="installation-steps">
+<h2>Installation Steps<a class="headerlink" href="#installation-steps" title="Permalink to this heading"></a></h2>
+<p>After joining our beta program, all you need to do is to use any of the commands below to install the Linux daemon program.</p>
+</section>
+<section id="using-bash">
+<h2>Using bash<a class="headerlink" href="#using-bash" title="Permalink to this heading"></a></h2>
+<p>To install the XDP-ADC daemon using bash run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -L https://releases.xdpadc.com/scripts/install_xdpadc.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="using-apt">
+<h2>Using APT<a class="headerlink" href="#using-apt" title="Permalink to this heading"></a></h2>
+<p>To install the daemon using APT, first add XDP-ADC Software’s apt repository by adding the following to the source list:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>deb <span class="o">[</span><span class="nv">arch</span><span class="o">=</span>amd64<span class="o">]</span> https://apt.releases.xdpadc.com/ stable main
+</pre></div>
+</div>
+<p>Then add Aktia’s public key to APT’s trusted key list by running the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>curl -f https://releases.xdpadc.com/keys/xdpadc-apt.public <span class="p">|</span> sudo apt-key add -
+</pre></div>
+</div>
+<p>Then run <code class="code docutils literal notranslate"><span class="pre">apt-get-update</span></code> or <code class="code docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">xdpadc-cli</span></code> to install the latest version of the XDP-ADC daemon.</p>
+</section>
+<section id="login">
+<h2>Login<a class="headerlink" href="#login" title="Permalink to this heading"></a></h2>
+<p>To log in to XDP-ADC, run the following and enter your XDP-ADC API key ID and key secret when prompted:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>xdpadc login
+</pre></div>
+</div>
+</section>
+<section id="start-daemon">
+<h2>Start daemon<a class="headerlink" href="#start-daemon" title="Permalink to this heading"></a></h2>
+<p>Then start the XDP-ADC daemon by running the below command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>sudo xdpadc apidump --project <span class="o">[</span>your_project_name<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="verify">
+<h2>verify<a class="headerlink" href="#verify" title="Permalink to this heading"></a></h2>
+<p>You will be able to use the following command to check the logs of XDP-ADC daemon. Once you see <strong>*XDP-ADC reports for duty…*</strong> in the logs, it’s running successfully.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>xdpadc logs
+</pre></div>
+</div>
+</section>
+<section id="starting-daemon-on-system-boot">
+<h2>Starting daemon on system boot<a class="headerlink" href="#starting-daemon-on-system-boot" title="Permalink to this heading"></a></h2>
+<p>The APT package that you installed above has a systemd service file for integrating XDP-ADC daemon into systemd. To start the daemon on system boot:</p>
+<ul class="simple">
+<li><p>Edit <code class="code docutils literal notranslate"><span class="pre">/etc/default/xdpadc-daemon</span></code> to configure the service. This file should be self-explanatory. You will need to configure the API key and any command-line arguments for the CLI. An example is given below. The existing comments in the file are elided for brevity.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">AKITA_API_KEY_ID</span><span class="o">=</span>apk_XXXXXXXXXXXXXXXXXXXXXX
+<span class="linenos">2</span><span class="nv">AKITA_API_KEY_SECRET</span><span class="o">=</span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<span class="linenos">3</span><span class="nv">PROJECT_NAME</span><span class="o">=</span>my-project
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Once configured, have systemd read the new configuration:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>sudo systemctl daemon-reload
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You can then start and enable the XDP-ADC daemon service in the usual manner:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">systemd</span> <span class="pre">start</span> <span class="pre">xdpadc</span></code> will start the XDP-ADC daemon running as a service.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">systemd</span> <span class="pre">enable</span> <span class="pre">xdpadc</span></code> enables the service to start on boot.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">systemd</span> <span class="pre">status</span> <span class="pre">xdpadc</span></code> checks the status of the service.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">systemd</span> <span class="pre">restart</span> <span class="pre">xdpadc</span></code> restarts the service.</p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Get Started with XDP-ADC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../view_defense/index.html" class="btn btn-neutral float-right" title="View the defense logs with XDP-ADC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, XDP-ADC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
