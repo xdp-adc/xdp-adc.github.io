@@ -43,7 +43,13 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Getting Started with Docker</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Getting Started with Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-project">Create a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-api-key">Generate API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attach-daemon">Attach Daemon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify">Verify</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -81,8 +87,40 @@
 <h1>XDP-ADC: Getting Started with Docker<a class="headerlink" href="#xdp-adc-getting-started-with-docker" title="Permalink to this heading"></a></h1>
 <p>Getting started with XDP-ADC is as simple as dropping our daemon into your service or stack. Once we’re in, XDP-ADC protects your system based on the configured security rules.</p>
 <p>Below are instructions for installing the XDP-ADC daemon on a staging or production Docker container that has access to the public internet. You will need to be in our beta to use this.</p>
+<section id="create-a-project">
+<h2>Create a project<a class="headerlink" href="#create-a-project" title="Permalink to this heading"></a></h2>
+<p>Do we have a project concept?</p>
+</section>
+<section id="generate-api-key">
+<h2>Generate API key<a class="headerlink" href="#generate-api-key" title="Permalink to this heading"></a></h2>
+<p>As the question above?</p>
+</section>
+<section id="attach-daemon">
+<h2>Attach Daemon<a class="headerlink" href="#attach-daemon" title="Permalink to this heading"></a></h2>
+<p>To attach the XDP-ADC daemon to your Docker container, your container must a.) be connected to the public internet, and b.) be running. Then:</p>
+<ol class="arabic simple">
+<li><p>Start your service via <code class="code docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> or <code class="code docutils literal notranslate"><span class="pre">docker-compose</span></code>.</p></li>
+<li><p>Locate the name of the container where the app, service, or API you want to monitor is running.</p></li>
+<li><p>Start the XDP-ADC daemon and specify the container’s network stack with the command below:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>docker run --rm --network container:your-container-name <span class="se">\</span>
+<span class="linenos">2</span> -e <span class="nv">AKITA_API_KEY_ID</span><span class="o">=</span>... <span class="se">\</span>
+<span class="linenos">3</span> -e <span class="nv">AKITA_API_KEY_SECRET</span><span class="o">=</span>... <span class="se">\</span>
+<span class="linenos">4</span> xdp-adc/cli:latest <span class="se">\</span>
+<span class="linenos">5</span> --project your-project-name
+</pre></div>
+</div>
+</section>
+<section id="verify">
+<h2>Verify<a class="headerlink" href="#verify" title="Permalink to this heading"></a></h2>
+<p>The XDP-ADC daemon should now see all data coming to the app or service running in the specified container, and protect you when suspicious packts are detected.</p>
+<p>To make sure the XDP-ADC daemon is running correctly, you can always use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>xdpadc logs
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
