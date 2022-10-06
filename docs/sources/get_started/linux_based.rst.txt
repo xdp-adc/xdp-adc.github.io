@@ -1,7 +1,7 @@
 XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal
 ======================================================================
 
-Getting started with Linux with XDP-ADC is as easy as running a Linux daemon program in your VM or machine. Once the daemon program is up and running, XDP-ADC is already protecting the system.
+Getting started with Linux with XDP-ADC is as easy as running a Linux daemon program in your VM or machine. Once the daemon program is up and running, XDP-ADC is protecting the system.
 
 Below are instructions for installing the XDP-ADC daemon program in any Debian Linux environment. You’ll need to be in our beta to use this.
 
