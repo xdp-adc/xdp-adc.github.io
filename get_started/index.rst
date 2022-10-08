@@ -12,3 +12,5 @@ Getting started.
    fly_io
    aws_ecs
    aws_elastic_beanstalk
+   aws_fargate
+   azure_web_apps

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDP-ADC: Get Started with Azure Web Apps &mdash; XDP-ADC  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="View the defense logs with XDP-ADC" href="../view_defense/index.html" />
+    <link rel="prev" title="XDP-ADC: Get Started with AWS Fargate" href="aws_fargate.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> XDP-ADC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">XDP-ADC: Getting Started with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fly_io.html">XDP-ADC: Getting Started with Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_ecs.html">XDP-ADC: Get Started with AWS ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_elastic_beanstalk.html">XDP-ADC: Get Started with AWS Elastic Beanstalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_fargate.html">XDP-ADC: Get Started with AWS Fargate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Get Started with Azure Web Apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-project">Create a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-api-key">Generate API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-daemon-in-container">Install Daemon in container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-daemon">Run Daemon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-with-dockerfile">Run with Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-with-script">Run with script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-api-key">Configure API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-container">Launch Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify">Verify</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Configuration with XDP-ADC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">XDP-ADC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Get Started with XDP-ADC</a> &raquo;</li>
+      <li>XDP-ADC: Get Started with Azure Web Apps</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/get_started/azure_web_apps.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdp-adc-get-started-with-azure-web-apps">
+<h1>XDP-ADC: Get Started with Azure Web Apps<a class="headerlink" href="#xdp-adc-get-started-with-azure-web-apps" title="Permalink to this heading"></a></h1>
+<p>Getting started with XDP-ADC is as simple as dropping our daemon into your service or stack. Once we’re in, XDP-ADC protects your system based on the configured security rules.</p>
+<p>Below are instructions for installing the XDP-ADC in your staging or production environment in Azure App Service. To use XDP-ADC, you’ll need to be in our beta.</p>
+<p>You will be setting up the XDP-ADC Daemon to run within your custom Linux container. To set up the XDP-ADC Daemon you will:</p>
+<ol class="arabic simple">
+<li><p>Create an XDP-ADC Project</p></li>
+<li><p>Generate an API key for the XDP-ADC Daemon</p></li>
+<li><p>Install the XDP-ADC Daemon in your container</p></li>
+<li><p>Run the XDP-ADC Daemon</p></li>
+<li><p>Configure your XDP-ADC API key in the App Service configuration</p></li>
+<li><p>Launch the new container</p></li>
+<li><p>Verify that the XDP-ADC Daemon is working</p></li>
+</ol>
+<section id="create-a-project">
+<h2>Create a project<a class="headerlink" href="#create-a-project" title="Permalink to this heading"></a></h2>
+<p>Do we have a project concept?</p>
+</section>
+<section id="generate-api-key">
+<h2>Generate API key<a class="headerlink" href="#generate-api-key" title="Permalink to this heading"></a></h2>
+<p>As the question above?</p>
+</section>
+<section id="install-daemon-in-container">
+<h2>Install Daemon in container<a class="headerlink" href="#install-daemon-in-container" title="Permalink to this heading"></a></h2>
+<p>Install the XDP-ADC Daemon during your container build process by running the install script below, adding it to your Dockerfile, or manually downloading the Debian package from our repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -L https://releases.xdpadc.com/scripts/install_xdpadc.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="run-daemon">
+<h2>Run Daemon<a class="headerlink" href="#run-daemon" title="Permalink to this heading"></a></h2>
+<p>There are two options for running the XDP-ADC Daemon:</p>
+<ol class="arabic simple">
+<li><p>Modify the entry point in your Dockerfile, or</p></li>
+<li><p>Via a script</p></li>
+</ol>
+</section>
+<section id="run-with-dockerfile">
+<h2>Run with Dockerfile<a class="headerlink" href="#run-with-dockerfile" title="Permalink to this heading"></a></h2>
+<p>Next, change your container’s default command to the XDP-ADC Daemon by adding the below to your Dockerfile. Use the project name you created earlier on the XDP-ADC console.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>CMD <span class="o">[</span><span class="s2">&quot;/usr/local/bin/xdpadc&quot;</span>, <span class="s2">&quot;--project&quot;</span>, <span class="s2">&quot;&lt;your project name&gt;&quot;</span>, <span class="se">\</span>
+<span class="linenos">2</span> <span class="s2">&quot;-u&quot;</span>, <span class="s2">&quot;root&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;&lt;your normal commnand line&gt;&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="run-with-script">
+<h2>Run with script<a class="headerlink" href="#run-with-script" title="Permalink to this heading"></a></h2>
+<p>If your normal entry point is a script, you can run the XDP-ADC as a background process. Run <code class="code docutils literal notranslate"><span class="pre">xdpadc</span> <span class="pre">--project</span> <span class="pre">&lt;your_project_name&gt;</span></code> in the background.</p>
+</section>
+<section id="configure-api-key">
+<h2>Configure API key<a class="headerlink" href="#configure-api-key" title="Permalink to this heading"></a></h2>
+<p>The XDP-ADC Daemon needs to access the API Key you created earlier. The best way to set the API key is by an environment variable passed in to the container.</p>
+<p>In the Azure web interface, you can configure the environment variables by navigating to Settings &gt; Configuration &gt; Application settings. Add new application settings named <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_ID</span></code> and <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_SECRET</span></code> and enter your API key ID and key secret. These values will be securely added to the environment variables in the container.</p>
+</section>
+<section id="launch-container">
+<h2>Launch Container<a class="headerlink" href="#launch-container" title="Permalink to this heading"></a></h2>
+<p>After adding the XDP-ADC API key, build your new container, add it to your normal repository, and restart your application in Azure App Service. This will cause Azure to pull the new version of the container, and the Akita Agent will start sending data.</p>
+</section>
+<section id="verify">
+<h2>Verify<a class="headerlink" href="#verify" title="Permalink to this heading"></a></h2>
+<p>The XDP-ADC daemon should now see all data coming to the app or service running in the specified container, and protect you when suspicious packts are detected.</p>
+<p>To make sure the XDP-ADC daemon is running correctly, you can always use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>xdpadc logs
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="aws_fargate.html" class="btn btn-neutral float-left" title="XDP-ADC: Get Started with AWS Fargate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../view_defense/index.html" class="btn btn-neutral float-right" title="View the defense logs with XDP-ADC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, XDP-ADC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

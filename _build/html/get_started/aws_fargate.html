@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDP-ADC: Get Started with AWS Fargate &mdash; XDP-ADC  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="XDP-ADC: Get Started with Azure Web Apps" href="azure_web_apps.html" />
+    <link rel="prev" title="XDP-ADC: Get Started with AWS Elastic Beanstalk" href="aws_elastic_beanstalk.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> XDP-ADC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">XDP-ADC: Getting Started with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fly_io.html">XDP-ADC: Getting Started with Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_ecs.html">XDP-ADC: Get Started with AWS ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_elastic_beanstalk.html">XDP-ADC: Get Started with AWS Elastic Beanstalk</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Get Started with AWS Fargate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-project">Create a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-api-key">Generate API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-to-task-definition">Add to task definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-task-definition">Launch task definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify">verify</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="azure_web_apps.html">XDP-ADC: Get Started with Azure Web Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Configuration with XDP-ADC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">XDP-ADC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Get Started with XDP-ADC</a> &raquo;</li>
+      <li>XDP-ADC: Get Started with AWS Fargate</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/get_started/aws_fargate.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdp-adc-get-started-with-aws-fargate">
+<h1>XDP-ADC: Get Started with AWS Fargate<a class="headerlink" href="#xdp-adc-get-started-with-aws-fargate" title="Permalink to this heading"></a></h1>
+<p>Getting started with XDP-ADC is as simple as dropping our daemon into your service or stack. Once we’re in, XDP-ADC protects your system based on the configured security rules.</p>
+<p>Below are instructions for installing the XDP-ADC Daemon in your staging or production environment in Amazon Fargate. To use XDP-ADC, you’ll need to be in our beta.</p>
+<p>You will be configuring Fargate to run the XDP-ADC Daemon as a sidecar in each container you deploy. To set up the XDP-ADC Daemon you will:</p>
+<ol class="arabic simple">
+<li><p>Create an XDP-ADC Project</p></li>
+<li><p>Generate an API key for the XDP-ADC Daemon</p></li>
+<li><p>Add the XDP-ADC Daemon to your task definition</p></li>
+<li><p>Launch your updated task definition</p></li>
+<li><p>Verify that the XDP-ADC Daemon is working</p></li>
+</ol>
+<section id="create-a-project">
+<h2>Create a project<a class="headerlink" href="#create-a-project" title="Permalink to this heading"></a></h2>
+<p>Do we have a project concept?</p>
+</section>
+<section id="generate-api-key">
+<h2>Generate API key<a class="headerlink" href="#generate-api-key" title="Permalink to this heading"></a></h2>
+<p>As the question above?</p>
+</section>
+<section id="add-to-task-definition">
+<h2>Add to task definition<a class="headerlink" href="#add-to-task-definition" title="Permalink to this heading"></a></h2>
+<p>Within the containerDefinitions section of your task, add a new section containing the XDP-ADC Docker image as shown below.</p>
+<p>Fill in the workspace name and the API key that you created earlier.</p>
+<p>Specify a logConfiguration section in order to see the output from the XDP-ADC Daemon. Use the destination where you store your application logs, or store them separately.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>...
+<span class="linenos"> 2</span>    &quot;containerDefinitions&quot;: [
+<span class="linenos"> 3</span>      ...
+<span class="linenos"> 4</span>      {
+<span class="linenos"> 5</span>            &quot;name&quot;: &quot;xdpadc&quot;,
+<span class="linenos"> 6</span>            &quot;image&quot;: &quot;public.ecr.aws/akitasoftware/xdpadc:latest&quot;,
+<span class="linenos"> 7</span>            &quot;entryPoint&quot;: [&quot;/xdpadc&quot;, &quot;--project&quot;, &quot;{project name}&quot;],
+<span class="linenos"> 8</span>            &quot;environment&quot; : [
+<span class="linenos"> 9</span>                 { &quot;name&quot; : &quot;XDPADC_API_KEY_ID&quot;, &quot;value&quot; : &quot;{key id}&quot; },
+<span class="linenos">10</span>                 { &quot;name&quot; : &quot;XDPADC_API_KEY_SECRET&quot;, &quot;value&quot; : &quot;{key secret}&quot; }
+<span class="linenos">11</span>             ]
+<span class="linenos">12</span>        }
+<span class="linenos">13</span>    ]
+</pre></div>
+</div>
+<p>The XDP-ADC token can also be stored in an AWS Secret instead.</p>
+<p>If you edit the task definition from the console, the settings look like the following, though please note that the entry point is comma-separated on the console <code class="code docutils literal notranslate"><span class="pre">/xdpadc,--project,{project_name}</span></code>.</p>
+</section>
+<section id="launch-task-definition">
+<h2>Launch task definition<a class="headerlink" href="#launch-task-definition" title="Permalink to this heading"></a></h2>
+<p>Once the task definition is saved, update your service as you ordinarily would. The XDP-ADC Agent will automatically start protecting your services.</p>
+</section>
+<section id="verify">
+<h2>verify<a class="headerlink" href="#verify" title="Permalink to this heading"></a></h2>
+<p>You will be able to use the following command to check the logs of XDP-ADC daemon. Once you see <strong>*XDP-ADC reports for duty…*</strong> in the logs, it’s running successfully.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>xdpadc logs
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="aws_elastic_beanstalk.html" class="btn btn-neutral float-left" title="XDP-ADC: Get Started with AWS Elastic Beanstalk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="azure_web_apps.html" class="btn btn-neutral float-right" title="XDP-ADC: Get Started with Azure Web Apps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, XDP-ADC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
