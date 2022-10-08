@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="View the defense logs with XDP-ADC" href="../view_defense/index.html" />
+    <link rel="next" title="XDP-ADC: AWS Elastic Beanstalk" href="aws_elastic_beanstalk.html" />
     <link rel="prev" title="XDP-ADC: Getting Started with Docker" href="docker.html" /> 
 </head>
 
@@ -58,6 +58,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="aws_elastic_beanstalk.html">XDP-ADC: AWS Elastic Beanstalk</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
@@ -132,6 +133,10 @@
 <h2>Configure API key<a class="headerlink" href="#configure-api-key" title="Permalink to this heading"></a></h2>
 <p>The XDP-ADC Daemon needs to access the API Key you created earlier. The best way to set the API key is using a Secret, which is passed as an environment variable to the container.</p>
 <p>From the command line, add new secrets called <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_ID</span></code> and <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_SECRET</span></code> with your key’s values filled in:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>flyctl secrets <span class="nb">set</span> <span class="nv">XDPADC_API_KEY_ID</span><span class="o">=</span>apk_xxxxxxx
+<span class="linenos">2</span>flyctl secrets <span class="nb">set</span> <span class="nv">XDPADC_API_KEY_SECRET</span><span class="o">=</span>xxxxxxxxxx
+</pre></div>
+</div>
 <p>You will see a hashed version of the secret in your Fly.io activity log.</p>
 </section>
 <section id="launch-container">
@@ -154,7 +159,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="docker.html" class="btn btn-neutral float-left" title="XDP-ADC: Getting Started with Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../view_defense/index.html" class="btn btn-neutral float-right" title="View the defense logs with XDP-ADC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="aws_elastic_beanstalk.html" class="btn btn-neutral float-right" title="XDP-ADC: AWS Elastic Beanstalk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

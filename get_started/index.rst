@@ -10,3 +10,5 @@ Getting started.
    linux_based
    docker
    fly_io
+   aws_ecs
+   aws_elastic_beanstalk

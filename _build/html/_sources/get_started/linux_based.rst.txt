@@ -37,7 +37,7 @@ Then add Aktia’s public key to APT’s trusted key list by running the followi
 
     curl -f https://releases.xdpadc.com/keys/xdpadc-apt.public | sudo apt-key add -
 
-Then run :code:`apt-get-update` or :code:`apt-get install xdpadc-cli` to install the latest version of the XDP-ADC daemon.
+Then run :code:`apt-get-update` or :code:`apt-get install xdpadc` to install the latest version of the XDP-ADC daemon.
 
 Login
 *****

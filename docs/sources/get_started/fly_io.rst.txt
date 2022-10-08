@@ -65,8 +65,8 @@ From the command line, add new secrets called :code:`XDPADC_API_KEY_ID` and :cod
 .. code-block:: bash
     :linenos:
 
-   flyctl secrets set XDPADC_API_KEY_ID=apk_xxxxxxx
-   flyctl secrets set XDPADC_API_KEY_SECRET=xxxxxxxxxx
+    flyctl secrets set XDPADC_API_KEY_ID=apk_xxxxxxx
+    flyctl secrets set XDPADC_API_KEY_SECRET=xxxxxxxxxx
 
 You will see a hashed version of the secret in your Fly.io activity log.
 

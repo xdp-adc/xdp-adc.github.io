@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDP-ADC: Get Started with AWS ECS &mdash; XDP-ADC  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="XDP-ADC: Get Started with AWS Elastic Beanstalk" href="aws_elastic_beanstalk.html" />
+    <link rel="prev" title="XDP-ADC: Getting Started with Fly.io" href="fly_io.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> XDP-ADC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">XDP-ADC: Getting Started with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fly_io.html">XDP-ADC: Getting Started with Fly.io</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Get Started with AWS ECS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-project">Create a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-api-key">Generate API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-docker-compose-file">Write Docker Compose file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-an-ecs-configuration-file">Write an ECS Configuration File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-new-ecs-project">Create New ECS Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify">verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaling-up">Scaling up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aws_elastic_beanstalk.html">XDP-ADC: Get Started with AWS Elastic Beanstalk</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Configuration with XDP-ADC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">XDP-ADC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Get Started with XDP-ADC</a> &raquo;</li>
+      <li>XDP-ADC: Get Started with AWS ECS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/get_started/aws_ecs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdp-adc-get-started-with-aws-ecs">
+<h1>XDP-ADC: Get Started with AWS ECS<a class="headerlink" href="#xdp-adc-get-started-with-aws-ecs" title="Permalink to this heading"></a></h1>
+<p>Getting started with XDP-ADC is as simple as dropping our daemon into your service or stack. Once we’re in, XDP-ADC protects your system based on the configured security rules.</p>
+<p>Below are instructions for installing the XDP-ADC Daemon in your staging or production environment in Amazon Elastic Container Service (ECS).</p>
+<p>You will be attaching the XDP-ADC Daemon to the host network, and you can run the agent alongside your existing ECS containers. To set up the XDP-ADC Daemon you will:</p>
+<ol class="arabic simple">
+<li><p>Meet the prerequisites</p></li>
+<li><p>Create an XDP-ADC Project</p></li>
+<li><p>Generate an API key for the XDP-ADC Daemon</p></li>
+<li><p>Write a Docker Compose file for the XDP-ADC Daemon</p></li>
+<li><p>Write an ECS configuration file for the XDP-ADC Daemon</p></li>
+<li><p>Create a new ECS project to launch the XDP-ADC Daemon</p></li>
+<li><p>Verify that the XDP-ADC Daemon is working</p></li>
+</ol>
+<p>Once you’ve successfully set up the XDP-ADC Daemon, you can proceed to scale up your deployment.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>You’ll need to be in our beta.</p></li>
+<li><p>You must have a Linux cluster in ECS for XDP-ADC to work.</p></li>
+<li><p>You must have access to the host network. The XDP-ADC Daemon will be installed there.</p></li>
+</ul>
+</section>
+<section id="create-a-project">
+<h2>Create a project<a class="headerlink" href="#create-a-project" title="Permalink to this heading"></a></h2>
+<p>Do we have a project concept?</p>
+</section>
+<section id="generate-api-key">
+<h2>Generate API key<a class="headerlink" href="#generate-api-key" title="Permalink to this heading"></a></h2>
+<p>As the question above?</p>
+</section>
+<section id="write-docker-compose-file">
+<h2>Write Docker Compose file<a class="headerlink" href="#write-docker-compose-file" title="Permalink to this heading"></a></h2>
+<p>Create a Docker Compose file to define an XDP-ADC Daemon that captures on a continuous basis. We suggest naming it xdpadc-compose.yaml.</p>
+<p>You will need your API key and API key secret from the previous step, as well as the Project name you created.</p>
+<p>For production use, add a logging section in the definition to capture logs.</p>
+<p>If you want to version pin the XDP-ADC Daemon, replace <code class="code docutils literal notranslate"><span class="pre">xdpadc:latest</span></code> with a specific version.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3&#39;</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">            </span><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">              </span><span class="nt">xdpadc</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">                </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public.ecr.aws/xdpadc/xdpadc:latest</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">                </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">XDPADC_API_KEY_ID=apk_XXXXXXXXXX</span><span class="w"></span>
+<span class="linenos">7</span><span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">XDPADC_API_KEY_SECRET=XXXXXXXXXX</span><span class="w"></span>
+<span class="linenos">8</span><span class="w">                </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/xdpadc --project my-project-name</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The example configuration uses our public ECR repository to avoid rate-limiting problems pulling from Docker Hub.</p>
+</section>
+<section id="write-an-ecs-configuration-file">
+<h2>Write an ECS Configuration File<a class="headerlink" href="#write-an-ecs-configuration-file" title="Permalink to this heading"></a></h2>
+<p>You will need to create a new ECS configuration file called xdpadc-params.yaml. It should look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">task_definition</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">              </span><span class="nt">ecs_network_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">    </span><span class="w w-Error">        </span><span class="nt">run_params</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">              </span><span class="nt">task_placement</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">                </span><span class="nt">constraints</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">7</span><span class="w">                  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">distinctInstance</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The settings cause the XDP-ADC Daemon to monitor all traffic on the host, and ensure that only one XDP-ADC container is run per host.</p>
+</section>
+<section id="create-new-ecs-project">
+<h2>Create New ECS Project<a class="headerlink" href="#create-new-ecs-project" title="Permalink to this heading"></a></h2>
+<p>Once the configuration file is in place, turn the XDP-ADC Daemon on with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>ecs-cli compose -p xdpadc-protect -f xdpadc-compose.yaml --ecs-params xdpadc-params.yaml service up  --cluster-config &lt;mycluster&gt;
+</pre></div>
+</div>
+<p>This creates a new project named <code class="code docutils literal notranslate"><span class="pre">xdpadc-protect</span></code> and configures a service based on the previous two YAML files. The service is initialized with a desired container count of 1.</p>
+</section>
+<section id="verify">
+<h2>verify<a class="headerlink" href="#verify" title="Permalink to this heading"></a></h2>
+<p>You can verify that the container has started with <code class="code docutils literal notranslate"><span class="pre">ecs-cli</span> <span class="pre">ps</span></code>, or view its log output if you configured a logging section in the UI.</p>
+</section>
+<section id="scaling-up">
+<h2>Scaling up<a class="headerlink" href="#scaling-up" title="Permalink to this heading"></a></h2>
+<p>Once you have verified that traffic is successfully being captured, you can scale up to more capture Agents using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>ecs-cli compose -p xdpadc-capture service scale NNN
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fly_io.html" class="btn btn-neutral float-left" title="XDP-ADC: Getting Started with Fly.io" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aws_elastic_beanstalk.html" class="btn btn-neutral float-right" title="XDP-ADC: Get Started with AWS Elastic Beanstalk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, XDP-ADC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

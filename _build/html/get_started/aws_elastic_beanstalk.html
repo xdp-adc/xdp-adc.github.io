@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDP-ADC: Get Started with AWS Elastic Beanstalk &mdash; XDP-ADC  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="View the defense logs with XDP-ADC" href="../view_defense/index.html" />
+    <link rel="prev" title="XDP-ADC: Get Started with AWS ECS" href="aws_ecs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> XDP-ADC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Get Started with XDP-ADC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_based.html">XDP-ADC: Getting Started with Linux-based virtual machines or bare-metal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">XDP-ADC: Getting Started with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fly_io.html">XDP-ADC: Getting Started with Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aws_ecs.html">XDP-ADC: Get Started with AWS ECS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XDP-ADC: Get Started with AWS Elastic Beanstalk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-xdp-adc">Set Up XDP-ADC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-project">Create a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-api-key">Generate API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-compose">Docker Compose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-the-xdp-adc-api-key-as-an-environment-property">Add the XDP-ADC API key as an environment property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deploy-and-verify">Deploy and Verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dockerfile">Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-dockerfile">Single Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-dockerfiles">Multiple Dockerfiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Add the XDP-ADC API key as an environment property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Deploy and Verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-an-application-with-dockerrun-aws-json">Create an Application with Dockerrun.aws.json</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Add the XDP-ADC API key as an environment property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Deploy and Verify</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../view_defense/index.html">View the defense logs with XDP-ADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">Advanced Configuration with XDP-ADC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">XDP-ADC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Get Started with XDP-ADC</a> &raquo;</li>
+      <li>XDP-ADC: Get Started with AWS Elastic Beanstalk</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/get_started/aws_elastic_beanstalk.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xdp-adc-get-started-with-aws-elastic-beanstalk">
+<h1>XDP-ADC: Get Started with AWS Elastic Beanstalk<a class="headerlink" href="#xdp-adc-get-started-with-aws-elastic-beanstalk" title="Permalink to this heading"></a></h1>
+<p>Getting started with XDP-ADC is as simple as dropping our daemon into your service or stack. Once we’re in, XDP-ADC protects your system based on the configured security rules.</p>
+<p>Below are instructions for installing the XDP-ADC Daemon in your staging or production environment as a Docker container in AWS Elastic Beanstalk.</p>
+<p>To set up the XDP-ADC Daemon on AWS Elastic Beanstalk, you must first set up XDP-ADC and then you can:</p>
+<ol class="arabic simple">
+<li><p>Use Docker Compose, or</p></li>
+<li><p>Use a Dockerfile, or</p></li>
+<li><p>Use Dockerrun.aws.json (Alpha)</p></li>
+</ol>
+<section id="set-up-xdp-adc">
+<h2>Set Up XDP-ADC<a class="headerlink" href="#set-up-xdp-adc" title="Permalink to this heading"></a></h2>
+<p>You’ll need to be in our beta.</p>
+</section>
+<section id="create-a-project">
+<h2>Create a project<a class="headerlink" href="#create-a-project" title="Permalink to this heading"></a></h2>
+<p>Do we have a project concept?</p>
+</section>
+<section id="generate-api-key">
+<h2>Generate API key<a class="headerlink" href="#generate-api-key" title="Permalink to this heading"></a></h2>
+<p>As the question above?</p>
+</section>
+<section id="docker-compose">
+<h2>Docker Compose<a class="headerlink" href="#docker-compose" title="Permalink to this heading"></a></h2>
+<p>To install the XDP-ADC Agent, add the XDP-ADC Daemon as an additional service to your docker-compose.yaml file, as shown below. If you want to version pin the XDP-ADC CLI, replace <code class="code docutils literal notranslate"><span class="pre">xdpadc:latest</span></code> with a specific version.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">  </span><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">xdpadc</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xdpadc</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public.ecr.aws/xdpadc/xdpadc:latest</span><span class="w"></span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.env</span><span class="w"></span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/xdpadc --project &lt;your project here&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This configures the XDP-ADC Daemon to monitor for all traffic on the host, and upload it to the project you created earlier.</p>
+<p>The daemon will receive the API key as an environment variable, and the next section describes how to configure the values that are placed in the .env file through the Amazon web console.</p>
+</section>
+<section id="add-the-xdp-adc-api-key-as-an-environment-property">
+<h2>Add the XDP-ADC API key as an environment property<a class="headerlink" href="#add-the-xdp-adc-api-key-as-an-environment-property" title="Permalink to this heading"></a></h2>
+<p>In the AWS console, go the “configuration” section of the Elastic Beanstalk environment where you’ll be deploying XDP-ADC.</p>
+<p>Edit the “software” category, and add environment properties named <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_ID</span></code> and <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_SECRET</span></code>, using the values of the API key you created.</p>
+</section>
+<section id="deploy-and-verify">
+<h2>Deploy and Verify<a class="headerlink" href="#deploy-and-verify" title="Permalink to this heading"></a></h2>
+<p>Deploy the new version of your application as you normally would. The XDP-ADC daemon will automatically start the protection when data is sent to and from your application.</p>
+</section>
+<section id="dockerfile">
+<h2>Dockerfile<a class="headerlink" href="#dockerfile" title="Permalink to this heading"></a></h2>
+<p>You have two options if you are using a Dockerfile for Elastic Beanstalk:</p>
+<ol class="arabic simple">
+<li><p>Single Dockerfile</p></li>
+<li><p>Multiple Dockerfiles</p></li>
+</ol>
+</section>
+<section id="single-dockerfile">
+<h2>Single Dockerfile<a class="headerlink" href="#single-dockerfile" title="Permalink to this heading"></a></h2>
+<p>If your application has only a single Dockerfile, use <code class="code docutils literal notranslate"><span class="pre">xdpadc</span></code> as a wrapper around your normal entry point.</p>
+<p>To do this, add the following line to your Dockerfile, which will install the latest XDP-ADC Daemon:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -L https://releases.xdpadc.com/scripts/install_xdpadc.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Next, change the <code class="code docutils literal notranslate"><span class="pre">CMD</span></code> directive in your Dockerfile to run the XDP-ADC CLI and start your previous entry point as a subprocess:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>CMD <span class="o">[</span><span class="s2">&quot;/usr/local/bin/xdpadc&quot;</span>, <span class="s2">&quot;--project&quot;</span>, <span class="s2">&quot;&lt;your project name&gt;&quot;</span>, <span class="se">\</span>
+<span class="linenos">2</span> <span class="s2">&quot;-u&quot;</span>, <span class="s2">&quot;root&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;&lt;your normal commnand line&gt;&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>You may instead choose to run XDP-ADC as a background process, but this requires writing a script that will do so during container start, before launching your normal main process.</p>
+<p>Then Add the XDP-ADC API key as an environment property to make the API key available to the XDP-ADC Daemon.</p>
+</section>
+<section id="multiple-dockerfiles">
+<h2>Multiple Dockerfiles<a class="headerlink" href="#multiple-dockerfiles" title="Permalink to this heading"></a></h2>
+<p>If you are using multiple Dockerfiles for your application, download the XDP-ADC Daemon’s Debian package by running the below command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -L https://releases.xdpadc.com/scripts/install_xdpadc.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Then copy the package into the Dockerfile for installation.</p>
+<p>Next, change the <code class="code docutils literal notranslate"><span class="pre">CMD</span></code> directive in your Dockerfile to run the XDP-ADC CLI and start your previous entry point as a subprocess:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>CMD <span class="o">[</span><span class="s2">&quot;/usr/local/bin/xdpadc&quot;</span>, <span class="s2">&quot;--project&quot;</span>, <span class="s2">&quot;&lt;your project name&gt;&quot;</span>, <span class="se">\</span>
+<span class="linenos">2</span> <span class="s2">&quot;-u&quot;</span>, <span class="s2">&quot;root&quot;</span>, <span class="s2">&quot;-c&quot;</span>, <span class="s2">&quot;&lt;your normal commnand line&gt;&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>You may instead choose to run XDP-ADC as a background process, but this requires writing a script that will do so during container start, before launching your normal main process.</p>
+<p>Then Add the XDP-ADC API key as an environment property to make the API key available to the XDP-ADC Daemon.</p>
+</section>
+<section id="id1">
+<h2>Add the XDP-ADC API key as an environment property<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>In the AWS console, go the “configuration” section of the Elastic Beanstalk environment where you’ll be deploying XDP-ADC.</p>
+<p>Edit the “software” category, and add environment properties named <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_ID</span></code> and <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_SECRET</span></code>, using the values of the API key you created.</p>
+</section>
+<section id="id2">
+<h2>Deploy and Verify<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>Deploy the new version of your application as you normally would. The XDP-ADC daemon will automatically start the protection when data is sent to and from your application.</p>
+</section>
+<section id="create-an-application-with-dockerrun-aws-json">
+<h2>Create an Application with Dockerrun.aws.json<a class="headerlink" href="#create-an-application-with-dockerrun-aws-json" title="Permalink to this heading"></a></h2>
+<p>Note: This installation method is in Alpha. Please contact us if you run into any difficulty, and we’ll be happy to help.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">Dockerrun.aws.json</span></code> is an AWS ECS task definition that allows the XDP-ADC Daemon to run as a separate container using host networking (on Linux clusters). It allows you to avoid editing your existing container. Add the following container definition to your configuration file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>{
+<span class="linenos"> 2</span> &quot;containerDefinitions&quot; : [
+<span class="linenos"> 3</span> ...
+<span class="linenos"> 4</span>   {
+<span class="linenos"> 5</span>     &quot;name&quot;: &quot;xdpadc&quot;,
+<span class="linenos"> 6</span>     &quot;image&quot;: &quot;public.ecr.aws/xdpadc/xdpadc:latest&quot;,
+<span class="linenos"> 7</span>     &quot;essential&quot;: false,
+<span class="linenos"> 8</span>     &quot;memory&quot;: 256,
+<span class="linenos"> 9</span>     &quot;networkMode&quot;: &quot;host&quot;,
+<span class="linenos">10</span>     &quot;entrypoint&quot;: [&quot;/xdpadc&quot;, &quot;--project&quot;, &quot;&lt;your project here&gt;&quot;]
+<span class="linenos">11</span>   }
+<span class="linenos">12</span> ]
+<span class="linenos">13</span> ...
+<span class="linenos">14</span>}
+</pre></div>
+</div>
+<p>This will start an instance of the XDP-ADC Daemon on each host, and protect web apps from all the network traffic on that host.</p>
+</section>
+<section id="id3">
+<h2>Add the XDP-ADC API key as an environment property<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p>In the AWS console, go the “configuration” section of the Elastic Beanstalk environment where you’ll be deploying XDP-ADC.</p>
+<p>Edit the “software” category, and add environment properties named <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_ID</span></code> and <code class="code docutils literal notranslate"><span class="pre">XDPADC_API_KEY_SECRET</span></code>, using the values of the API key you created.</p>
+</section>
+<section id="id4">
+<h2>Deploy and Verify<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>Deploy the new version of your application as you normally would. The XDP-ADC daemon will automatically start the protection when data is sent to and from your application.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="aws_ecs.html" class="btn btn-neutral float-left" title="XDP-ADC: Get Started with AWS ECS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../view_defense/index.html" class="btn btn-neutral float-right" title="View the defense logs with XDP-ADC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, XDP-ADC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
