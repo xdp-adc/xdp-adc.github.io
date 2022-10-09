@@ -22,6 +22,7 @@ help:
 release:
 	# get rid of old cache
 	rm -rf docs/*
+	printf "docs.xdpadc.com\n" > docs/CNAME
 
 	# generate new site
 	make html
