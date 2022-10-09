@@ -22,9 +22,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+html_title = 'XDP-ADC Doc: 10x faster WAF/WAAP that works at network layer (L2)'
 
 # custom.css is inside one of the html_static_path folders (e.g. _static)
 html_css_files = ["custom.css"]
+html_logo = 'logo.png'
+html_favicon = 'fav.png'
