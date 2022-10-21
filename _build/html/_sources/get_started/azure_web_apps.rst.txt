@@ -72,7 +72,7 @@ In the Azure web interface, you can configure the environment variables by navig
 Launch Container
 ****************
 
-After adding the XDP-ADC API key, build your new container, add it to your normal repository, and restart your application in Azure App Service. This will cause Azure to pull the new version of the container, and the Akita Agent will start sending data.
+After adding the XDP-ADC API key, build your new container, add it to your normal repository, and restart your application in Azure App Service. This will cause Azure to pull the new version of the container, and the XDP-ADC Daemon will start sending data.
 
 Verify
 ******

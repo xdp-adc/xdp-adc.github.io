@@ -42,7 +42,7 @@ Specify a logConfiguration section in order to see the output from the XDP-ADC D
 	  ...
 	  {
 	        "name": "xdpadc",
-	        "image": "public.ecr.aws/akitasoftware/xdpadc:latest",
+	        "image": "public.ecr.aws/xdpadc/xdpadc:latest",
 	        "entryPoint": ["/xdpadc", "--project", "{project name}"],
 	        "environment" : [
 	             { "name" : "XDPADC_API_KEY_ID", "value" : "{key id}" },

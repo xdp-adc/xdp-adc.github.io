@@ -79,8 +79,8 @@ The APT package that you installed above has a systemd service file for integrat
 .. code-block:: bash
     :linenos:
 
-    AKITA_API_KEY_ID=apk_XXXXXXXXXXXXXXXXXXXXXX
-    AKITA_API_KEY_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    XDPADC_API_KEY_ID=apk_XXXXXXXXXXXXXXXXXXXXXX
+    XDPADC_API_KEY_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     PROJECT_NAME=my-project
 
 - Once configured, have systemd read the new configuration:

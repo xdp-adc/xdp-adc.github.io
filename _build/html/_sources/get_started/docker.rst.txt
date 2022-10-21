@@ -29,8 +29,8 @@ To attach the XDP-ADC daemon to your Docker container, your container must a.) b
     :linenos:
 
     docker run --rm --network container:your-container-name \
-     -e AKITA_API_KEY_ID=... \
-     -e AKITA_API_KEY_SECRET=... \
+     -e XDPADC_API_KEY_ID=... \
+     -e XDPADC_API_KEY_SECRET=... \
      xdp-adc/cli:latest \
      --project your-project-name
 
