@@ -18,13 +18,13 @@ You will be setting up the XDP-ADC Daemon to run within your custom Linux contai
 Create a project
 ****************
 
-Do we have a project concept?
+Create a project in our beta portal.
 
 
 Generate API key
 ****************
 
-As the question above?
+Generate a XDP-ADC API key for the created project.
 
 
 Install Daemon in container

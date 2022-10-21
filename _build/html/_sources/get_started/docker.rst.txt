@@ -8,13 +8,13 @@ Below are instructions for installing the XDP-ADC daemon on a staging or product
 Create a project
 ****************
 
-Do we have a project concept?
+Create a project in our beta portal.
 
 
 Generate API key
 ****************
 
-As the question above?
+Generate a XDP-ADC API key for the created project.
 
 Attach Daemon
 *************
